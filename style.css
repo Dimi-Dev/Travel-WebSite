@@ -1,0 +1,770 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
+}
+
+header{
+    position: relative;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    color: #222;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.group{
+    position: relative;
+    display: flex;
+}
+
+.group .navigation, 
+.group .action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.group ul li{
+    list-style: none;
+}
+
+.group ul li a{
+    color: #222;
+    text-decoration: none;
+    margin-left: 30px;
+}
+
+.group ul li a:hover{
+    color: #3fa9af;
+}
+
+.menuToggle{
+    display: none;
+}
+
+.group .item{
+    position: relative;
+}
+
+.span-container{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.span-container:hover{
+    color: #3fa9af;
+}
+
+.group span{
+    transition: 0.5s;
+    will-change: transform;
+    display: inline-block;
+}
+
+.s1 span{
+    transform-origin: bottom;
+}
+
+.s2 span{
+    transform-origin: top;
+    transform: translateY(100%) rotateX(-90deg);
+}
+
+.s2{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.item:hover .s1 span{
+    transform: translateY(-100%) rotateX(-90deg);
+}
+
+.item:hover .s2 span{
+    transform: translateY(0%) rotateX(0deg);
+}
+
+.group .action{
+    margin-left: 20px;
+}
+
+.group .action li a{
+    font-size: 1.25em;
+}
+
+.banner{
+    position: relative;
+    width: 100%;
+    padding: 0 100px;
+}
+
+.banner .bg{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background: url(img/banner.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+}
+
+.content h2{
+    position: absolute;
+    color: #fff;
+    font-size: 5.5em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transform: translateY(-15px);
+}
+
+.searchBox{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 30px 50px;
+    transform: translateY(50%);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.searchBox .inputBx{
+    margin: 0 20px;
+}
+
+.searchBox .inputBx p{
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.searchBox .inputBx p.hidden{
+    color: #fff;
+}
+
+.searchBox .inputBx input{
+    outline: none;
+    border: 1px solid #222;
+    padding: 5px;
+    width: 100%;
+    min-width: 150px;
+    font-size: 1.1em;
+}
+
+.searchBox .inputBx input[type="submit"]{
+    outline: none;
+    border: none;
+    /* background: #89ab24; */
+    background: #3fa9af;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding: 8px;
+}
+
+.marquee-container{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    background: #3fa9af;
+    overflow: hidden;
+}
+
+.marquee{
+    font-size: 3em;
+    line-height: 1.3;
+    padding: 24px 0;
+    color: #fff;
+    white-space: nowrap;
+    animation: marquee 30.5s infinite linear;
+}
+
+.marquee::after{
+    content: "DEPART DE PARIS - BORDEAUX - TOULOUSE - MARSEILLE - LYON";
+}
+
+@keyframes marquee{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+.offers{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.destination{
+    padding: 50px;
+    position: relative;
+}
+
+.destination h2{
+    font-size: 2em;
+    color: #222;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.destination h2::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 30%;
+    background: grey;
+    top: 9%;
+    left: 5%;
+    margin-left: 5px;
+}
+
+.content-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+}
+
+.content-grid .card{
+    position: relative;
+    border: 1px solid #949393;
+    border-radius: 5px;
+    width: 280px;
+    height: 300px;
+    margin: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.photo{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+
+.photo1{
+    background: url(img/hotel1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo2{
+    background: url(img/hotel2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo3{
+    background: url(img/hotel3.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo4{
+    background: url(img/hotel4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo5{
+    background: url(img/hotel5.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo6{
+    background: url(img/hotel6.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo7{
+    background: url(img/hotel7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo8{
+    background: url(img/hotel8.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+.photo9{
+    background: url(img/hotel9.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50%;
+}
+
+.card h5{
+    text-transform: uppercase;
+    font-size: 1.2em;
+    padding: 5px;
+    color: #222;
+}
+
+.card p{
+    padding: 5px;
+    color: #484848;
+}
+
+.priceBox{
+    display: flex;
+    justify-content: space-between;
+    color: #222;
+    font-size: 0.9em;
+}
+
+.priceBox p:nth-child(2){
+    /* color: #89ab24; */
+    color: #3fa9af;
+    font-size: 1.4em !important;
+}
+
+.topDestination{
+    padding: 50px;
+    position: relative;
+}
+
+.topDestination h2{
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: #222;
+}
+
+.topDestination h2::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 70%;
+    background: grey;
+    top: 9%;
+    left: 13%;
+    margin-left: 2px;
+}
+
+.contentBox{
+    border: 2px solid #3fa9af;
+    padding: 10px;
+}
+
+.contentBox .box{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 20px 0;
+}
+
+.contentBox .box .price{
+    /* color: #89ab24; */
+    color: #3fa9af;
+    font-size: 1.2em;
+}
+
+.allTravels{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allTravels a{
+    padding: 20px 10px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    color: #222;
+    transition: 0.5s;
+    margin-bottom: 50px;
+}
+
+.allTravels a:hover{
+    background: #3fa9af;
+    color: #fff;
+}
+
+.bandeau{
+    display: flex;
+    /* background: #89ab24; */
+    background: #3fa9af;
+    margin-bottom: 50px;
+}
+
+.bandeau .left{
+    background: url(img/familly.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    /* height: 60vh; */
+    width: 60%;
+}
+
+.bandeau .right{
+    padding: 50px;
+    /* background: #89ab24; */
+    background: #3fa9af;
+    /* opacity: 0; */
+    /* transform: translateX(-100%); */
+    opacity: 0.6s ease-in-out;
+}
+
+/* .bandeau .right.active{
+    transform: translateX(0%);
+    opacity: 1;
+} */
+
+.bandeau .right h2{
+    font-size: 3em;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.bandeau .right h6{
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.bandeau .right p{
+    text-align: justify;
+    width: 50%;
+    margin-bottom: 60px;
+    color: #222;
+}
+
+.bandeau .right a{
+    text-decoration: none;
+    background: #fff;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    color: #222;
+    transition: 0.5s;
+}
+
+.bandeau .right a:hover{
+    /* background: #89ab24; */
+    background: #3fa9af;
+    color: #fff;
+    border: 1px solid #222;
+}
+
+.others{
+    padding: 50px;
+    position: relative;
+}
+
+.others h2{
+    font-size: 1.8em;
+    margin-bottom: 50px;
+}
+
+.others h2::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 50%;
+    background: grey;
+    top: 16%;
+    left: 3%;
+    margin-left: 11px;   
+}
+
+.others .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.others .container .card{
+    height: 60vh;
+    width: 100%;
+    margin: 0 10px 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+/* .others .container .card:hover{
+    transform: scale(1.1);
+} */
+
+.others .container .card h2{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+}
+
+.card1{
+    background: url(img/run.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card2{
+    background: url(img/randonnée.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card3{
+    background: url(img/golf.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.card4{
+    background: url(img/catamaran.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.infos{
+    background: #efeeee;
+    height: 60vh;
+    padding: 50px;
+}
+
+.infos h2{
+    color: #222;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.infos .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.infos .container .box{
+    width: 235px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.infos .container .box span{
+    /* color: #89ab24; */
+    color: #3fa9af;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.infos .container .box h6{
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.infos .container .box p{
+    font-size: 0.7em;
+    text-align: center;
+}
+
+textarea:hover,
+input:hover,
+form-button:hover,
+.form-button:hover {
+    /* background: #89ab24; */
+    /* color: #e2dedb; */
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container {
+    padding-top: 20px;
+    text-align: center;
+}
+
+#reused_form {
+    position: relative;
+    margin: 50px auto;
+}
+
+input {
+    font-size: 0.85em;
+    width: 470px;
+    height: 50px;
+    padding: 0 15px;
+    background: transparent;
+    outline: none;
+    color: #726659;
+    /* border: 1px solid #b3aca7; */
+    border: 1px solid #949393;
+    border-bottom: none;
+}
+
+textarea {
+    width: 470px;
+    height: 110px;
+    max-height: 110px;
+    padding: 15px;
+    background: transparent;
+    outline: none;
+    color: #726659;
+    /* border: 1px solid #b3aca7; */
+    border: 1px solid #949393;
+    resize: none;
+}
+
+input::placeholder,
+textarea::placeholder,
+input:focus::placeholder,
+textarea:focus::placeholder {
+    /* color: #aca49c; */
+    color: #726659;
+}
+
+/* input:hover::placeholder,
+textarea:hover::placeholder,
+input:hover:focus::placeholder,
+textarea:hover:focus::placeholder {
+    color: #e2dedb;
+} */
+
+.form-button {
+    background: transparent;
+    /* border: 1px solid #b3aca7; */
+    border: 1px solid #949393;
+    padding: 20px 75px;
+    margin: 14px 0 -20px 0;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.form-button:hover{
+    /* background: #89ab24; */
+    background: #3fa9af;
+    color: #fff;
+}
+
+.form-container h4 {
+    font-size: 2em;
+}
+
+footer{
+    background: #393939;
+    padding: 30px;
+    color: #fff;
+}
+
+footer .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first{
+    width: 20%;
+}
+
+.first h2{
+    text-transform: uppercase;
+    /* color: #89ab24; */
+    color: #3fa9af;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.second{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+
+.second .bx{
+    width: 25%;
+    margin-right: 20px;
+}
+
+.second .bx h5{
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.second .bx li{
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.second .bx li a{
+    text-decoration: none;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.second .bx li a:hover{
+    /* color: #89ab24; */
+    color: #3fa9af;
+}
+
+.third{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.third h5{
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.third a{
+    color: #fff;
+    font-size: 1.4em;
+    /* background: #fff; */
+    border-radius: 50%;
+    padding: 7px 10px;
+    margin-right: 5px;
+    transition: 0.5s;
+}
+
+.third a:hover{
+    /* color: #89ab24; */
+    color: #3fa9af;
+}
